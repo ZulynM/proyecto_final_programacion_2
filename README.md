@@ -1,1 +1,33 @@
 # proyecto_final_programacion_2
+
+En el presente repositorio se desarrolla el trabajo final del curso programación para Análisis de Datos II. Las integrantes del grupo son:
+
+•Zulyn Mendez O
+
+•Kimberly Matarrita 
+
+•Joseline Portuguez
+
+El trabajo consiste del procesamiento y análisis de dos conjuntos de datos sobre terremotos provenientes del USGS (Servicio Geológico de los Estados Unidos): registros de terremotos con magnitud mayor a 5.5 desde 1965 al 2016.
+
+*Diccionario de datos*
+
+Dataset terremotos_profundidad
+
+| Variable    | Tipo     | Descripción                  |
+|-------------|----------|------------------------------|
+| Fecha       | Fecha    | Fecha del terremoto          |
+| Hora        | Hora     | Hora del terremoto           |
+| Latitud     | Numérica | Latitud del epicentro        |
+| Longitud    | Numérica | Longitud del epicentro       |
+| Tipo        | Caracter | Causa del movimiento         |
+| Profundidad | Numérica | Profundidad del terremoto    |
+| ID          | Caracter | Identificador del movimiento |
+
+Dataset terremotos_magnitud
+
+| Variable         | Tipo     | Descripcion                     |
+|------------------|----------|---------------------------------|
+| ID               | caracter | Identificador del movimiento    |
+| Magnitud         | numerica | Magnitud del terremoto          |
+| Tipo de magnitud | caracter | Unidad de medida de la magnitud |
