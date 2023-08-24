@@ -120,3 +120,7 @@ datos_terremotos_profundidad <- datos_terremotos_profundidad |>
   mutate(Mes = month(Fecha))
 ```
 
+2.7 Unir ambos conjuntos de datos en un solo conjunto de datos llamado datos_terremotos. Para esto use un left_join o un right_join, la llave que une ambos datasets es la columna llamada ID en los conjuntos de datos originales. (2pts)
+
+```{r}
+union_datos_terremotos <- left_join(datos_terremotos_profundidad, datos_terremotos_magnitud, by = "ID")
