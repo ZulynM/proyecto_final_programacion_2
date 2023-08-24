@@ -49,3 +49,17 @@ colnames(terremotos_1) <- c("Código", "Fecha", "Tiempo", "Latitud", "Longitud",
 
 ```{r}
 colnames(terremotos_2) <- c("Código", "ID","Magnitud", "Tipo de Magnitud")
+```
+
+2.3 Eliminación de filas duplicadas (si existen)
+
+```{r}
+datos_terremotos_profundidad <- distinct(terremotos_1)
+```
+
+
+```{r}
+datos_terremotos_magnitud <- distinct(terremotos_2)
+```
+
+```{r}
