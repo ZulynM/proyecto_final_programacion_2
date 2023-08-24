@@ -84,3 +84,25 @@ for (fila in filas_separadas) {
 ```{r}
 head(datos_terremotos_profundidad)
 ```
+
+2.5 Transformación de datos: para el conjunto de datos terremotos_profundidad examine cuáles son los valores distintos que hay en la variable "Type" o tipo. Use mutate para unificar valores si es necesario 
+
+```{r}
+valores_distintos_tipo <- as.data.frame(table(datos_terremotos_profundidad$Tipo))
+```
+
+```{r}
+datos_terremotos_profundidad <- datos_terremotos_profundidad |>
+  mutate(across(c(Tipo), function(x) ifelse(x == "earthquake", "Terremoto", x))) |>
+  mutate(across(c(Tipo), function(x) ifelse(x == "Earthquake", "Terremoto", x))) |>
+  mutate(across(c(Tipo), function(x) ifelse(x == "nuclear explosion", "Explosión Nuclear", x))) |> 
+  mutate(across(c(Tipo), function(x) ifelse(x == "Nuclear Explosion", "Explosión Nuclear", x))) |>
+  mutate(across(c(Tipo), function(x) ifelse(x == "Explosion", "Explosión", x))) |>
+  mutate(across(c(Tipo), function(x) ifelse(x == "Rock Burst", "Estallido de Roca", x)))
+```
+
+
+```{r}
+unique(datos_terremotos_profundidad$Tipo) 
+```
+
