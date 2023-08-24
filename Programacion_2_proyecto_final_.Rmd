@@ -124,3 +124,13 @@ datos_terremotos_profundidad <- datos_terremotos_profundidad |>
 
 ```{r}
 union_datos_terremotos <- left_join(datos_terremotos_profundidad, datos_terremotos_magnitud, by = "ID")
+```
+
+• 2.8 Eliminar columnas vacías e innecesarias: Elimine aquellas columnas vacías o que no están aportando ninguna información. (2pts)
+
+```{r}
+datos_terremotos <- datos_terremotos %>%
+  select_if(~ !all(is.na(.)) && any(!is.na(.)))
+```
+
+
