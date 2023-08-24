@@ -1,0 +1,40 @@
+---
+title: "Programacion_2_proyecto_final"
+author: "Zulyn_Mendez_O, Kimberly Matarrita, Joseline Portuguez"
+date: "2023-08-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(stringr)
+library(readr)
+library(readxl) 
+library(writexl) 
+library(utils)
+library(RSQLite) 
+library(DBI)
+library(lubridate)
+library(ggplot2)
+library(gt)
+library(leaflet)
+```
+
+A.Realiza la lectura de los datos en R
+```{r}
+datos_terremotos_1<-"https://raw.githubusercontent.com/isa229/programacion_analisis_datos_ii/main/terremotos_profundidad.csv"
+```
+
+
+```{r}
+terremotos_1 <- read_csv(datos_terremotos_1)
+```
+
+```{r}
+datos_terremotos_2<-"https://raw.githubusercontent.com/isa229/programacion_analisis_datos_ii/main/terremotos_magnitud.csv"
+```
+
+```{r}
+terremotos_2 <- read_csv(datos_terremotos_2)
+```
