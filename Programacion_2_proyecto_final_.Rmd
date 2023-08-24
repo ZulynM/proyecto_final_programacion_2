@@ -106,3 +106,17 @@ datos_terremotos_profundidad <- datos_terremotos_profundidad |>
 unique(datos_terremotos_profundidad$Tipo) 
 ```
 
+• 2.6 Creación de columnas adicionales: para el conjunto de datos terremotos_profundidad cree 2 nuevas columnas: una que contenga el mes del terremoto, y otra que contenga el año del terremoto (4pts)
+
+```{r}
+
+datos_terremotos_profundidad <- datos_terremotos_profundidad |> 
+  mutate(Fecha = mdy(Fecha))
+
+datos_terremotos_profundidad <- datos_terremotos_profundidad |>                     
+  mutate(Año = year(Fecha))
+
+datos_terremotos_profundidad <- datos_terremotos_profundidad |>                              
+  mutate(Mes = month(Fecha))
+```
+
