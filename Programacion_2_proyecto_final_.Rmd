@@ -38,3 +38,14 @@ datos_terremotos_2<-"https://raw.githubusercontent.com/isa229/programacion_anali
 ```{r}
 terremotos_2 <- read_csv(datos_terremotos_2)
 ```
+
+B.• 2.2 Limpiar nombre de las variables (traducir al español) (4pts)
+
+```{r}
+colnames(terremotos_1) <- c("Código", "Fecha", "Tiempo", "Latitud", "Longitud", "Tipo", "Profundidad", "Error de Profundidad", "ID")
+
+```
+
+
+```{r}
+colnames(terremotos_2) <- c("Código", "ID","Magnitud", "Tipo de Magnitud")
