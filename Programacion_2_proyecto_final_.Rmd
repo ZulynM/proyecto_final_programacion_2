@@ -62,4 +62,25 @@ datos_terremotos_profundidad <- distinct(terremotos_1)
 datos_terremotos_magnitud <- distinct(terremotos_2)
 ```
 
+
+2.4 Transformación de los tipos de variables: para el conjunto de datos terremotos_profundidad use
+lubridate para transformar la fecha de carácter a un objetivo tipo fecha (2pts)
+
 ```{r}
+filas_separadas <- c(20651, 7565, 3540)
+
+for (fila in filas_separadas) {
+  fecha_hora <- datos_terremotos_profundidad$Fecha[datos_terremotos_profundidad$Nfila == fila]
+  
+  Fecha <- as.Date(substr(fecha_hora, 1, 10), format = "%m/%d/%Y")
+  Hora <- substr(fecha_hora, 12, 23)
+  
+  datos_terremotos_profundidad$Fecha[datos_terremotos_profundidad$Nfila == fila] <- Fecha
+  datos_terremotos_profundidad$Hora[datos_terremotos_profundidad$Nfila == fila] <- Hora
+}
+```
+
+
+```{r}
+head(datos_terremotos_profundidad)
+```
